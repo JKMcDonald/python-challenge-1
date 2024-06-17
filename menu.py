@@ -1,6 +1,6 @@
 def print_receipt(order_list):
     # Print header
-    print(f"{'Item name':<25} | {'Price':<6} | {'Quantity':<8}")
+    print(f"{'Item name'} | {'Price'} | {'Quantity'}")
     print('-' * 40)
     
     total_price = 0
@@ -11,13 +11,13 @@ def print_receipt(order_list):
         quantity = order['Quantity']
         
         # Print each item in receipt format
-        print(f"{item_name:<25} | ${price:>5.2f}  | {quantity:>8}")
+        print(f"{item_name} | ${price}  | {quantity}")
         
         # Calculate total price
         total_price += price * quantity
     
     print('-' * 40)
-    print(f"Total: ${total_price:.2f}")
+    print(f"Total: ${total_price}")
 
 def main():
     # Initialize an empty list to store orders
@@ -34,7 +34,7 @@ def main():
     while True:
         print("\nMenu:")
         for key, value in menu_items.items():
-            print(f"{key}. {value['Item name']} - ${value['Price']:.2f}")
+            print(f"{key}. {value['Item name']} - ${value['Price']}")
         
         # Prompt for menu selection
         menu_selection = input("Enter your selection from the menu (1, 2, 3): ")
